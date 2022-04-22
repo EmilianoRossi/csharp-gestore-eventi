@@ -15,3 +15,4 @@ int numeroPostiTotali = int.Parse(Console.ReadLine());
 Evento nuovoEvento = new Evento(titoloEvento, dataEvento, numeroPostiTotali);
 nuovoEvento.Prenota();
 nuovoEvento.Disdici();
+nuovoEvento.ToString(); 
