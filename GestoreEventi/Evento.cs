@@ -21,9 +21,22 @@ namespace GestoreEventi
         {
 
             this.titoloEvento = titoloEvento;
-            this.dataEvento = dataEvento;
-            this.numeroPostiTotale = numeroPostiTotale;
             
+            this.numeroPostiTotale = numeroPostiTotale;
+
+            try
+            {
+
+                SetData(dataEvento);
+                
+
+            }catch (Exception ex)
+            {
+
+                Console.WriteLine("Data inserita nel passato");
+
+            }
+          this.dataEvento = dataEvento;
 
         }
 
@@ -40,6 +53,18 @@ namespace GestoreEventi
         {
 
             return dataEvento;
+
+        }
+
+        public void SetData(DateTime dataEvento)
+        {
+
+            if(dataEvento < DateTime.Now)
+            {
+
+                throw new ArgumentOutOfRangeException();
+
+            }
 
         }
 

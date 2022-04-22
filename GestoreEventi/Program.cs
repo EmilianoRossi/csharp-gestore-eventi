@@ -37,7 +37,8 @@ programmaEventi.StampaLista(listaEventi);
 //DateTime dataUtente = DateTime.Parse(dataEventi);
 //programmaEventi.SvuotaLista(listaEventi);
 Console.WriteLine("Inserisci Data per cercare eventi");
-string dataUtente=Console.ReadLine();
+
+string dataUtente = Console.ReadLine();
 DateTime data = DateTime.Parse(dataUtente);
 
 
