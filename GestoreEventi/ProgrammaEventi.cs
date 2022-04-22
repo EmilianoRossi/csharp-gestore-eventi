@@ -12,6 +12,7 @@ namespace GestoreEventi
         //Attributi
         private protected string titoloEvento;
         private protected List <Evento> programmaEventi = new List <Evento> ();
+       
 
 
         //Costruttore
@@ -20,6 +21,14 @@ namespace GestoreEventi
 
             this.titoloEvento = titoloEvento;
             this.programmaEventi = programmaEventi;
+            
+
+        }
+
+        public string GetTitolo()
+        {
+
+            return titoloEvento;
 
         }
 
@@ -30,38 +39,34 @@ namespace GestoreEventi
 
         }
 
-        /*public void CercaEvento(List<Evento> programmaEventi)
+        public List<Evento> CercaEvento(DateTime data)
         {
 
-            foreach(Evento evento in programmaEventi)
-            {
-                Console.WriteLine("Inserisci una data (gg/mm/yyyy) per vedere che eventi ci saranno");
-                string dataUtente = Console.ReadLine ();
-                DateTime data = DateTime.Parse(dataUtente);
-                if (programmaEventi.Contains(evento.dataEvento))
+            List<Evento> lista = new List<Evento>();
+
+            for (int i = 0; i < programmaEventi.Count; i++) {
+
+                
+                
+                if(this.programmaEventi[i].GetData() == data)
                 {
 
-                    Console.WriteLine(data + " - " + titoloEvento);
+                    lista.Add (programmaEventi[i]);
 
                 }
-                else
-                {
-
-                    Console.WriteLine("Non ci sono eventi per questa data");
-
-                }
-
+                
             }
+            return lista;
+        }
 
-        }*/
 
-        public static void StampaDati(List<Evento> listaEventi)
+        public void StampaDati (List<Evento> listaEventi)
         {
 
             foreach (Evento evento in listaEventi)
             {
 
-                evento.ToString();
+                Console.WriteLine(evento.ToString());
 
             }
 
@@ -94,7 +99,7 @@ namespace GestoreEventi
             foreach(Evento evento in listaEventi)
             {
 
-                evento.ToString ();
+                Console.WriteLine(evento.ToString ());
 
             }
 

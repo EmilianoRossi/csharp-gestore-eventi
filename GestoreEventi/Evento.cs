@@ -36,10 +36,10 @@ namespace GestoreEventi
 
         }
 
-        public void SetData(DateTime dataEvento)
+        public DateTime GetData()
         {
 
-            this.dataEvento = dataEvento;
+            return dataEvento;
 
         }
 
@@ -121,18 +121,20 @@ namespace GestoreEventi
 
             //Override metodo to string
 
-            public virtual void ToString()
+            public override string ToString()
             {
 
-                //Console.WriteLine("Vuoi stampare l'evento? [si/no]");
-                //string risposta = Console.ReadLine();
+            //Console.WriteLine("Vuoi stampare l'evento? [si/no]");
+            //string risposta = Console.ReadLine();
 
-                //switch (risposta)
-                //{
+            //switch (risposta)
+            //{
 
-                    //case "si":
-                        
-                        Console.WriteLine(this.titoloEvento + " - " + this.dataEvento);
+            //case "si":
+            string stringa = "";
+            stringa = this.titoloEvento + " - " + this.dataEvento;
+
+            return stringa;
                         
                         //break;
 
