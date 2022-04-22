@@ -12,12 +12,12 @@ namespace GestoreEventi
     {
         //Attributi
         private protected string titoloEvento;
-        private protected DateTime dataEvento = new DateTime();
+        public DateTime dataEvento = new DateTime();
         private protected int numeroPostiTotale;
         private protected int numeroPostiPrenotati = 0;
         
         //Costruttore
-        public Evento ( string titoloEvento , DateTime dataEvento , int numeroPostiTotale)
+        public Evento ( string titoloEvento, DateTime dataEvento , int numeroPostiTotale)
         {
 
             this.titoloEvento = titoloEvento;
@@ -124,23 +124,22 @@ namespace GestoreEventi
             public virtual void ToString()
             {
 
-                Console.WriteLine("Vuoi stampare l'evento? [si/no]");
-                string risposta = Console.ReadLine();
+                //Console.WriteLine("Vuoi stampare l'evento? [si/no]");
+                //string risposta = Console.ReadLine();
 
-                switch (risposta)
-                {
+                //switch (risposta)
+                //{
 
-                    case "si":
-                        Console.WriteLine("------------- Informazioni Evento --------------");
-                        Console.WriteLine("Titolo evento: " + this.titoloEvento);
-                        Console.WriteLine("Data evento: " + this.dataEvento);
-                        Console.WriteLine("Numero posti disponibili" + this.numeroPostiTotale);
-                        break;
+                    //case "si":
+                        
+                        Console.WriteLine(this.titoloEvento + " - " + this.dataEvento);
+                        
+                        //break;
 
-                    case "no":
-                        Console.WriteLine("Grazie e arrivederci");
-                        break;
-                }
+                    //case "no":
+                        //Console.WriteLine("Grazie e arrivederci");
+                        //break;
+                //}
 
             } 
 
