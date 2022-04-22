@@ -50,6 +50,7 @@ namespace GestoreEventi
 
         }
 
+        //metodo prenota
         public void Prenota()
         {
             int numeroPostiDisponibili;
@@ -77,7 +78,8 @@ namespace GestoreEventi
             }
 
         }
-        
+
+        //metodo disdici
         public void Disdici()
         {
 
@@ -115,8 +117,33 @@ namespace GestoreEventi
                     break;
 
             }
-
         }
 
+            //Override metodo to string
+
+            public virtual void ToString()
+            {
+
+                Console.WriteLine("Vuoi stampare l'evento? [si/no]");
+                string risposta = Console.ReadLine();
+
+                switch (risposta)
+                {
+
+                    case "si":
+                        Console.WriteLine("------------- Informazioni Evento --------------");
+                        Console.WriteLine("Titolo evento: " + this.titoloEvento);
+                        Console.WriteLine("Data evento: " + this.dataEvento);
+                        Console.WriteLine("Numero posti disponibili" + this.numeroPostiTotale);
+                        break;
+
+                    case "no":
+                        Console.WriteLine("Grazie e arrivederci");
+                        break;
+                }
+
+            } 
+
     }
+
 }
